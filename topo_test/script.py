@@ -5,6 +5,7 @@ import configparser
 #######utilisation des donnes depuuis le fichier json
 with open('topo_test/network.json', 'r') as fichier:
     donnees = json.load(fichier)
+donnees["data"][2]['loopback'][1]
 # print(donnees["data"][1]['name'])
 # for element in donnees["data"]:
 #     print(element['name'])
@@ -86,6 +87,9 @@ def creation_fichier_config(filename, donnees):
             fichier.write(" ipv6 ospf ")
             fichier.write(donnees["data"][numero_json]['as'])
             fichier.write(" area 0\n")
+        for i in range (len(donnees["data"][numero_json]['interfaces'])):
+            fichier.write("interface ")
+            fichier.write(donnees["data"][numero_json]['loopback'][i])
 
 ##############milieu ecriture
 
