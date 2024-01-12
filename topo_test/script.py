@@ -5,7 +5,6 @@ import configparser
 #TODO 
 #negotiation auto ????
 #duplex full ??????
-#passive-interface FastEthernet0/0 ????
 
 
 #######utilisation des donnes depuuis le fichier json
@@ -112,6 +111,14 @@ def creation_fichier_config(filename, donnees):
                 fichier.write(donnees["data"][numero_json]['as'])
                 fichier.write(" area 0\n")
 
+        fichier.write("router bgp ")
+        fichier.write(donnees["data"][numero_json]['as'])
+        fichier.write("\n")
+        fichier.write(" bgp router-id ")
+        fichier.write(donnees["data"][numero_json]['id'])
+        fichier.write("\n")
+        fichier.write(" bgp log-neighbor-changes\n")
+        fichier.write(" no bgp default ipv4-unicast\n")
 
         
         fichier.write("ip forward-protocol nd\n")
