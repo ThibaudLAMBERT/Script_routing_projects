@@ -2,6 +2,12 @@ import json
 import os
 import configparser
 
+#TODO 
+#negotiation auto ????
+#duplex full ??????
+#passive-interface FastEthernet0/0 ????
+
+
 #######utilisation des donnes depuuis le fichier json
 with open('topo_test/network.json', 'r') as fichier:
     donnees = json.load(fichier)
@@ -73,7 +79,6 @@ def creation_fichier_config(filename, donnees):
         fichier.write("interface Loopback0\n")
         fichier.write(" no ip address\n")
         fichier.write(" ipv6 address ")
-        fichier.write(" ")
         fichier.write(donnees["data"][numero_json]['loopback'])
         fichier.write("\n")
         fichier.write(" ipv6 enable\n")
@@ -107,6 +112,59 @@ def creation_fichier_config(filename, donnees):
                 fichier.write(donnees["data"][numero_json]['as'])
                 fichier.write(" area 0\n")
 
+
+        
+        fichier.write("ip forward-protocol nd\n")
+
+        fichier.write("no ip http server\n")
+        fichier.write("no ip http secure-server\n")
+
+
+
+        if donnees["data"][numero_json]['protocol']== "RIP":
+            fichier.write("ipv6 router rip AS")
+            fichier.write(donnees["data"][numero_json]['as'])
+            fichier.write("\n")
+            fichier.write(" redistribute connected\n")
+
+        if donnees["data"][numero_json]['protocol']== "OSPF":
+            fichier.write("ipv6 router ospf ")
+            fichier.write(donnees["data"][numero_json]['as'])
+            fichier.write("\n")
+            fichier.write(" router-id ")
+            fichier.write(donnees["data"][numero_json]['id'])
+            fichier.write("\n")
+            for element in donnees["data"][numero_json]["interfaces"]:
+                if (element['neighbor'][1:2]) == "R":
+                    fichier.write(" passive-interface ")
+                    fichier.write(element['name'])
+                    fichier.write("\n")
+                    
+
+
+            
+
+
+
+        fichier.write("control-plane\n")
+        fichier.write("line con 0\n")
+        fichier.write(" exec-timeout 0 0\n")
+        fichier.write(" privilege level 15\n")
+        fichier.write(" logging synchronous\n")
+        fichier.write(" stopbits 1\n")
+        fichier.write("line aux 0\n")
+        fichier.write(" exec-timeout 0 0\n")
+        fichier.write(" privilege level 15\n")
+        fichier.write(" logging synchronous\n")
+        fichier.write(" stopbits 1\n")
+        fichier.write("line vty 0 4\n")
+        fichier.write(" login\n")
+        fichier.write("!\n")
+        fichier.write("!\n")
+        fichier.write("end\n")
+
+
+
 ##############milieu ecriture
 
 creation_fichier_config(fichier_cfg, donnees)
@@ -116,22 +174,7 @@ creation_fichier_config(fichier_cfg, donnees)
 
 # with open(fichier_cfg, 'a') as fichier:
    
-#     fichier.write("control-plane\n")
-#     fichier.write("line con 0\n")
-#     fichier.write(" exec-timeout 0 0\n")
-#     fichier.write(" privilege level 15\n")
-#     fichier.write(" logging synchronous\n")
-#     fichier.write(" stopbits 1\n")
-#     fichier.write("line aux 0\n")
-#     fichier.write(" exec-timeout 0 0\n")
-#     fichier.write(" privilege level 15\n")
-#     fichier.write(" logging synchronous\n")
-#     fichier.write(" stopbits 1\n")
-#     fichier.write("line vty 0 4\n")
-#     fichier.write(" login\n")
-#     fichier.write("!\n")
-#     fichier.write("!\n")
-#     fichier.write("end\n")
+    
 
 
 
