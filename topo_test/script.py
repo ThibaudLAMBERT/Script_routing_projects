@@ -2,20 +2,13 @@ import json
 import os
 import configparser
 
-
-
-
-
 #######utilisation des donnes depuuis le fichier json
-
 with open('topo_test/network.json', 'r') as fichier:
     donnees = json.load(fichier)
 #print(donnees["data"][1]['name'])
 
 
-#######"supprimer le fichier cfg"
-
-
+#######supprimer le fichier cfg
 def supprimer_all_lines(filename):
 
     with open(filename, 'w') as file:
@@ -36,7 +29,7 @@ def nom_routeur(nom_fichier):
                 return(ligne.strip()[9:])
             
 
-###############debut ecriture
+
 
 
 
@@ -65,6 +58,13 @@ def creation_fichier_config(filename):
         fichier.write("ipv6 cef\n")
         fichier.write("multilink bundle-name authenticated\n")
         fichier.write("ip tcp synwait-time 5\n")
+
+
+        fichier.write("interface Loopback0\n")
+        fichier.write("no ip address\n")
+        fichier.write("ipv6 address 2001:111::3/128\n")
+        fichier.write(" enable\n")
+        fichier.write("ipv6 rip AS111 enable\n")
 
 ##############milieu ecriture
 
