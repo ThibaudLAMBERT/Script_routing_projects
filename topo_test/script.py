@@ -5,8 +5,10 @@ import configparser
 #######utilisation des donnes depuuis le fichier json
 with open('topo_test/network.json', 'r') as fichier:
     donnees = json.load(fichier)
-#print(donnees["data"][1]['name'])
-
+# print(donnees["data"][1]['name'])
+# for element in donnees["data"]:
+#     print(element['name'])
+# print(len(donnees["data"]))
 
 #######supprimer le fichier cfg
 def supprimer_all_lines(filename):
@@ -36,9 +38,17 @@ def nom_routeur(nom_fichier):
 fichier_cfg = 'tester.cfg'
 
 
-def creation_fichier_config(filename):
+def creation_fichier_config(filename, donnees):
     nomrouteur = nom_routeur(filename)
     supprimer_all_lines(filename)
+    
+    for i in range (len(donnees["data"])):
+        if donnees["data"][i]['name'] == nomrouteur:
+            numero_json=i
+    
+    
+
+
     with open(fichier_cfg, 'a') as fichier:
     
 
@@ -61,14 +71,25 @@ def creation_fichier_config(filename):
 
 
         fichier.write("interface Loopback0\n")
-        fichier.write("no ip address\n")
-        fichier.write("ipv6 address 2001:111::3/128\n")
-        fichier.write(" enable\n")
-        fichier.write("ipv6 rip AS111 enable\n")
+        fichier.write(" no ip address\n")
+        fichier.write(" ipv6 address ")
+        fichier.write(" ")
+        fichier.write(donnees["data"][numero_json]['loopback'])
+        fichier.write("\n")
+        fichier.write(" ipv6 enable\n")
+        if donnees["data"][numero_json]['protocol']== "RIP":
+            fichier.write(" ipv6 rip AS")
+            fichier.write(donnees["data"][numero_json]['as'])
+            fichier.write(" enable\n")
+
+        if donnees["data"][numero_json]['protocol']== "OSPF":
+            fichier.write(" ipv6 ospf ")
+            fichier.write(donnees["data"][numero_json]['as'])
+            fichier.write(" area 0\n")
 
 ##############milieu ecriture
 
-creation_fichier_config(fichier_cfg)
+creation_fichier_config(fichier_cfg, donnees)
 
 
 ############fin ecriture
@@ -104,6 +125,3 @@ creation_fichier_config(fichier_cfg)
 
 
 
-# for element in donnees["data"]:
-#     print(element['name'])
-# print(donnes["data"])
