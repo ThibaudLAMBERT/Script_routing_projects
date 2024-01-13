@@ -43,14 +43,15 @@ def nom_routeur(nom_fichier):
 
 
 
-def creation_fichier_config(filename, donnees):
+def creation_fichier_config(filename, donnees,numero_json):
+    print("start modif for :", filename)
     nomrouteur = nom_routeur(filename)
     
     supprimer_all_lines(filename)
     
-    for i in range (len(donnees["data"])):
-        if donnees["data"][i]['name'] == nomrouteur:
-            numero_json=i
+    #for i in range (len(donnees["data"])):
+        #if donnees["data"][i]['name'] == nomrouteur:
+            #numero_json=i
 
     with open(filename, 'a') as fichier:
         fichier.write("version 15.2\n")
@@ -250,18 +251,30 @@ for element in os.listdir(chemin):
                 
                 liste_chemins.append(chemin_corrige)
 # print(liste_chemins)
-    
+
+
+
 #là, on appelle à la main la fonction, et ca fonctionne bien tout va bien                
 fichier_cfg = 'gns3_files/project-files/dynamips/ad27bb0b-dedf-408c-9304-e543a19c4627/configs/i1_startup-config.cfg'
-creation_fichier_config(fichier_cfg, donnees)
-
+#creation_fichier_config(fichier_cfg, donnees)
+#print(liste_chemins)
+#print(donnees)
+#print(nuumero_json)
 #quand je fais une boucle, qui semble vraiment etre la meme chose qu'au dessus, juste pour tous les chemins un par un
 #eh bah ca marche plus, et j'ai des erreurs dans ma fonction creation_fichier_config, peut etre un probleme de types
+
 for fichier_routeurs in liste_chemins:
-    fichier_cfg= fichier_routeurs
-    # print(fichier_cfg)
-    creation_fichier_config(fichier_cfg, donnees)
-    
+    nomrouteur = nom_routeur(fichier_routeurs)
+    for i in range (len(donnees["data"])):
+        if donnees["data"][i]['name'] == nomrouteur:
+            numero_json=i
+            creation_fichier_config(fichier_routeurs, donnees,numero_json)
+
+#ducoup c'est la j'ai mis le numero_json à cet endroit plutôt qu'à l'intérieur de la fonction creation_fichier_config 
+#et j'ai passé numero_json en paramètre de la fonction 
+
+# Ajouter ces lignes pour vérifier le nombre de noms de routeurs et de fichiers de configuration
+
 
 
 
