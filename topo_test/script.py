@@ -45,7 +45,7 @@ def nom_routeur(nom_fichier):
 
 def creation_fichier_config(filename, donnees):
     nomrouteur = nom_routeur(filename)
-    print(nomrouteur)
+    
     supprimer_all_lines(filename)
     
     for i in range (len(donnees["data"])):
@@ -129,17 +129,16 @@ def creation_fichier_config(filename, donnees):
                         fichier.write(" update-source Loopback0 ")
                         fichier.write("\n")
             else:
-                print("test")
+                
                 fichier.write(" neighbor ")
                 for truc in (donnees["data"]):
                     
                     if truc['name'] == element['neighbor']:
                         
                         for i in range (len(truc["interfaces"])):
-                            print(element["neighbor"])
-                            print (truc["interfaces"][i]["neighbor"])
+                           
                             if nomrouteur == truc["interfaces"][i]["neighbor"]:
-                                print("testtt")
+                                
                                 fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
 
 
@@ -164,17 +163,16 @@ def creation_fichier_config(filename, donnees):
 
                         
             else:
-                print("test")
+                
                 fichier.write("  neighbor ")
                 for truc in (donnees["data"]):
                     
                     if truc['name'] == element['neighbor']:
                         
                         for i in range (len(truc["interfaces"])):
-                            print(element["neighbor"])
-                            print (truc["interfaces"][i]["neighbor"])
+                            
                             if nomrouteur == truc["interfaces"][i]["neighbor"]:
-                                print("testtt")
+                                
                                 fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
                                 fichier.write(" activate\n")
         fichier.write(" exit-address-family\n")                    
@@ -231,55 +229,40 @@ def afficher_premieres_lignes(chemin_fichier, nombre_lignes=5):
         print(f"Une erreur s'est produite : {e}")
 
 
-
-# j=0
-# chemin = 'gns3_files/project-files/dynamips/'
-# for element in os.listdir(chemin):
-#     suite = "/configs/"
-#     fin = "*startup*.cfg"
-#     dossier = chemin + element + suite 
+liste_chemins=[]
+j=0
+chemin = "gns3_files/project-files/dynamips/"
+for element in os.listdir(chemin):
+    suite = "/configs/"
+    fin = "*startup*.cfg"
+    dossier = chemin + element + suite 
     
     
-#     if os.path.exists(dossier):
+    if os.path.exists(dossier):
          
-#         dossier = dossier + fin
-#         for elmt in glob.glob(dossier):
-#             if os.path.exists(elmt):
-#                 j+=1
-#                 print(j)
+        dossier = dossier + fin
+        for elmt in glob.glob(dossier):
+            if os.path.exists(elmt):
+               
                 
-#                 chemin_corrige = elmt.replace('\\', '/')
-#                 print(chemin_corrige)
-#                 creation_fichier_config(chemin_corrige, donnees)
+                chemin_corrige = elmt.replace('\\', '/')
                 
                 
-                
-    #     fichiers_correspondants = glob.glob(dossier)
-    # print(fichiers_correspondants[0])   *startup*.cfg
-# print(os.listdir(fichier))
-# if os.path.exists(fichier):
+                liste_chemins.append(chemin_corrige)
+# print(liste_chemins)
     
-
-fichier_cfg = 'tester.cfg'
+#là, on appelle à la main la fonction, et ca fonctionne bien tout va bien                
+fichier_cfg = 'gns3_files/project-files/dynamips/ad27bb0b-dedf-408c-9304-e543a19c4627/configs/i1_startup-config.cfg'
 creation_fichier_config(fichier_cfg, donnees)
 
-# modele_nom = 'gns3_files/project-files/dynamips/ff7267b9-8307-4cf3-b278-75a5f58ee391/configs/*startup*.cfg'
-
-
-
-
-
-##########bouts de codes peut etre utiles plus tard
-
-# if not os.path.exists(fichier_cfg):
-#     with open(fichier_cfg, 'w') as fichier:
-#         fichier.write("CleSansValeur1\n")
-#         fichier.write("CleSansValeur2\n")
+#quand je fais une boucle, qui semble vraiment etre la meme chose qu'au dessus, juste pour tous les chemins un par un
+#eh bah ca marche plus, et j'ai des erreurs dans ma fonction creation_fichier_config, peut etre un probleme de types
+for fichier_routeurs in liste_chemins:
+    fichier_cfg= fichier_routeurs
+    # print(fichier_cfg)
+    creation_fichier_config(fichier_cfg, donnees)
     
 
-
-
-# Utilisation de la fonction avec un exemple de fichier
 
 
 
