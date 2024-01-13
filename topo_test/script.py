@@ -164,6 +164,7 @@ def creation_fichier_config(filename, donnees):
                     if truc['name'] == element['neighbor']:
                         fichier.write(truc["loopback"].split('/')[0])
                         fichier.write(" activate\n")
+                     
 
                         
             else:
@@ -180,7 +181,7 @@ def creation_fichier_config(filename, donnees):
                                 print("testtt")
                                 fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
                                 fichier.write(" activate\n")
-                                fichier.write(" exit-address-family\n")
+        fichier.write(" exit-address-family\n")                    
 
 
 
