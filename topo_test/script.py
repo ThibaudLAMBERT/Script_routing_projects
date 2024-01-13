@@ -40,7 +40,7 @@ def nom_routeur(nom_fichier):
 
 
 
-fichier_cfg = 'tester.cfg'
+
 
 
 def creation_fichier_config(filename, donnees):
@@ -50,13 +50,8 @@ def creation_fichier_config(filename, donnees):
     for i in range (len(donnees["data"])):
         if donnees["data"][i]['name'] == nomrouteur:
             numero_json=i
-    
-    
-
 
     with open(fichier_cfg, 'a') as fichier:
-    
-
         fichier.write("version 15.2\n")
         fichier.write("service timestamps debug datetime msec\n")
         fichier.write("service timestamps log datetime msec\n")
@@ -182,21 +177,9 @@ def creation_fichier_config(filename, donnees):
                                 fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
                                 fichier.write(" activate\n")
         fichier.write(" exit-address-family\n")                    
-
-
-
-
-
-
-
-
         fichier.write("ip forward-protocol nd\n")
-
         fichier.write("no ip http server\n")
         fichier.write("no ip http secure-server\n")
-
-
-
         if donnees["data"][numero_json]['protocol']== "RIP":
             fichier.write("ipv6 router rip AS")
             fichier.write(donnees["data"][numero_json]['as'])
@@ -215,13 +198,6 @@ def creation_fichier_config(filename, donnees):
                     fichier.write(" passive-interface ")
                     fichier.write(element['name'])
                     fichier.write("\n")
-                    
-
-
-            
-
-
-
         fichier.write("control-plane\n")
         fichier.write("line con 0\n")
         fichier.write(" exec-timeout 0 0\n")
@@ -240,16 +216,11 @@ def creation_fichier_config(filename, donnees):
         fichier.write("end\n")
 
 
-
-##############milieu ecriture
-
+fichier_cfg = 'tester.cfg'
 creation_fichier_config(fichier_cfg, donnees)
 
 
-############fin ecriture
 
-# with open(fichier_cfg, 'a') as fichier:
-   
     
 
 
