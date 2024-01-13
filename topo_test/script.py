@@ -1,6 +1,7 @@
 import json
 import os
-import configparser
+
+import glob
 
 #TODO 
 #negotiation auto ????
@@ -14,7 +15,6 @@ with open('topo_test/network.json', 'r') as fichier:
 # for element in donnees["data"]:
 #     print(element['name'])
 # print(len(donnees["data"]))
-print(donnees["data"][0]["protocol"][:1])
 #######supprimer le fichier cfg
 def supprimer_all_lines(filename):
 
@@ -45,13 +45,14 @@ def nom_routeur(nom_fichier):
 
 def creation_fichier_config(filename, donnees):
     nomrouteur = nom_routeur(filename)
+    print(nomrouteur)
     supprimer_all_lines(filename)
     
     for i in range (len(donnees["data"])):
         if donnees["data"][i]['name'] == nomrouteur:
             numero_json=i
 
-    with open(fichier_cfg, 'a') as fichier:
+    with open(filename, 'a') as fichier:
         fichier.write("version 15.2\n")
         fichier.write("service timestamps debug datetime msec\n")
         fichier.write("service timestamps log datetime msec\n")
@@ -216,12 +217,55 @@ def creation_fichier_config(filename, donnees):
         fichier.write("end\n")
 
 
+def afficher_premieres_lignes(chemin_fichier, nombre_lignes=5):
+    try:
+        with open(chemin_fichier, 'r') as fichier:
+            for i in range(nombre_lignes):
+                ligne = fichier.readline()
+                if not ligne:
+                    break  # Arrêter si nous atteignons la fin du fichier
+                print(ligne.strip())
+    except FileNotFoundError:
+        print(f"Le fichier '{chemin_fichier}' n'a pas été trouvé.")
+    except Exception as e:
+        print(f"Une erreur s'est produite : {e}")
+
+
+
+# j=0
+# chemin = 'gns3_files/project-files/dynamips/'
+# for element in os.listdir(chemin):
+#     suite = "/configs/"
+#     fin = "*startup*.cfg"
+#     dossier = chemin + element + suite 
+    
+    
+#     if os.path.exists(dossier):
+         
+#         dossier = dossier + fin
+#         for elmt in glob.glob(dossier):
+#             if os.path.exists(elmt):
+#                 j+=1
+#                 print(j)
+                
+#                 chemin_corrige = elmt.replace('\\', '/')
+#                 print(chemin_corrige)
+#                 creation_fichier_config(chemin_corrige, donnees)
+                
+                
+                
+    #     fichiers_correspondants = glob.glob(dossier)
+    # print(fichiers_correspondants[0])   *startup*.cfg
+# print(os.listdir(fichier))
+# if os.path.exists(fichier):
+    
+
 fichier_cfg = 'tester.cfg'
 creation_fichier_config(fichier_cfg, donnees)
 
+# modele_nom = 'gns3_files/project-files/dynamips/ff7267b9-8307-4cf3-b278-75a5f58ee391/configs/*startup*.cfg'
 
 
-    
 
 
 
@@ -232,6 +276,10 @@ creation_fichier_config(fichier_cfg, donnees)
 #         fichier.write("CleSansValeur1\n")
 #         fichier.write("CleSansValeur2\n")
     
+
+
+
+# Utilisation de la fonction avec un exemple de fichier
 
 
 
