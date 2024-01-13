@@ -43,7 +43,7 @@
             "protocol": "RIP",
             "as": "111",
             "id": "1.1.1.3",
-            "loopback": "2001:111::3/128",
+            "loopback": "2001:111:3/128",
             "interfaces": [
                 {
                     "name": "g1/0",

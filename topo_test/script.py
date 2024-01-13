@@ -14,7 +14,7 @@ with open('topo_test/network.json', 'r') as fichier:
 # for element in donnees["data"]:
 #     print(element['name'])
 # print(len(donnees["data"]))
-
+print(donnees["data"][0]["protocol"][:1])
 #######supprimer le fichier cfg
 def supprimer_all_lines(filename):
 
@@ -120,7 +120,75 @@ def creation_fichier_config(filename, donnees):
         fichier.write(" bgp log-neighbor-changes\n")
         fichier.write(" no bgp default ipv4-unicast\n")
 
-        
+        for element in donnees["data"][numero_json]["interfaces"]:
+            if (element['neighbor'][1:2]) == donnees["data"][numero_json]["protocol"][:1]:
+                fichier.write(" neighbor ")
+                for truc in (donnees["data"]):
+                    if truc['name'] == element['neighbor']:
+                        fichier.write(truc["loopback"].split('/')[0])
+                        fichier.write(" remote-as ")
+                        fichier.write(truc["as"])
+                        fichier.write("\n neighbor ")
+                        fichier.write(truc["loopback"].split('/')[0])
+                        fichier.write(" update-source Loopback0 ")
+                        fichier.write("\n")
+            else:
+                print("test")
+                fichier.write(" neighbor ")
+                for truc in (donnees["data"]):
+                    
+                    if truc['name'] == element['neighbor']:
+                        
+                        for i in range (len(truc["interfaces"])):
+                            print(element["neighbor"])
+                            print (truc["interfaces"][i]["neighbor"])
+                            if nomrouteur == truc["interfaces"][i]["neighbor"]:
+                                print("testtt")
+                                fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
+
+
+
+                        
+                        fichier.write(" remote-as ")
+                        fichier.write(truc["as"])
+                        fichier.write("\n")
+        fichier.write(" address-family ipv4\n")
+        fichier.write(" exit-address-family\n")
+        fichier.write(" address-family ipv6\n")
+
+
+        for element in donnees["data"][numero_json]["interfaces"]:
+            if (element['neighbor'][1:2]) == donnees["data"][numero_json]["protocol"][:1]:
+                fichier.write("  neighbor ")
+                for truc in (donnees["data"]):
+                    if truc['name'] == element['neighbor']:
+                        fichier.write(truc["loopback"].split('/')[0])
+                        fichier.write(" activate\n")
+
+                        
+            else:
+                print("test")
+                fichier.write("  neighbor ")
+                for truc in (donnees["data"]):
+                    
+                    if truc['name'] == element['neighbor']:
+                        
+                        for i in range (len(truc["interfaces"])):
+                            print(element["neighbor"])
+                            print (truc["interfaces"][i]["neighbor"])
+                            if nomrouteur == truc["interfaces"][i]["neighbor"]:
+                                print("testtt")
+                                fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
+                                fichier.write(" activate\n")
+                                fichier.write(" exit-address-family\n")
+
+
+
+
+
+
+
+
         fichier.write("ip forward-protocol nd\n")
 
         fichier.write("no ip http server\n")
