@@ -121,7 +121,7 @@ def creation_fichier_config(filename, donnees,numero_json):
         fichier.write(" no bgp default ipv4-unicast\n")
 
         for element in donnees["data"][numero_json]["interfaces"]:
-            if (element['neighbor'][1:2]) == donnees["data"][numero_json]["protocol"][:1]:
+            if (as_routeur(element['neighbor'])) == donnees["data"][numero_json]["as"]:
                 fichier.write(" neighbor ")
                 for truc in (donnees["data"]):
                     if truc['name'] == element['neighbor']:
