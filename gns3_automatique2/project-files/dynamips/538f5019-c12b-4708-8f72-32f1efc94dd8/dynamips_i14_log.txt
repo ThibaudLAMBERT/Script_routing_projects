@@ -1,0 +1,34 @@
+Jan 17 15:52:20.119 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 17 15:52:20.121 HYPERVISOR: Started on IP = localhost, TCP port = 53037.
+Jan 17 15:52:20.603 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 17 15:52:20.604 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\anton\GNS3\projects\gns3_automatique2\project-files\dynamips 
+Jan 17 15:52:20.605 GENERAL: working_dir=C:\Users\anton\GNS3\projects\gns3_automatique2\project-files\dynamips
+Jan 17 15:52:20.605 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\anton\GNS3\projects\gns3_automatique2\project-files\dynamips\34724383-f48c-409e-9297-8c038cff2c63 
+Jan 17 15:52:20.606 GENERAL: working_dir=C:\Users\anton\GNS3\projects\gns3_automatique2\project-files\dynamips\34724383-f48c-409e-9297-8c038cff2c63
+Jan 17 15:52:20.606 HYPERVISOR: exec_cmd: vm create R2 2 c7200 
+Jan 17 15:52:20.612 VM: VM R2 created.
+Jan 17 15:52:20.614 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5015 
+Jan 17 15:52:20.615 HYPERVISOR: exec_cmd: c7200 get_mac_addr R2 
+Jan 17 15:52:20.615 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 15:52:20.615 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-FE 
+Jan 17 15:52:20.618 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Jan 17 15:52:20.619 HYPERVISOR: exec_cmd: vm set_exec_area R2 64 
+Jan 17 15:52:20.622 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/anton/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 15:52:20.623 HYPERVISOR: exec_cmd: c7200 set_mac_addr R2 ca02.51c8.0000 
+Jan 17 15:52:20.624 HYPERVISOR: exec_cmd: vm set_nvram R2 512 
+Jan 17 15:52:20.625 HYPERVISOR: exec_cmd: vm set_ram R2 512 
+Jan 17 15:52:20.627 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 15:52:20.628 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 PA-GE 
+Jan 17 15:52:20.630 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 15:52:20.630 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 PA-GE 
+Jan 17 15:52:20.631 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 15:52:20.632 HYPERVISOR: exec_cmd: vm slot_add_binding R2 3 0 PA-GE 
+Jan 17 15:52:28.868 HYPERVISOR: exec_cmd: nio create_udp udp-c32aaa3d-acd4-4584-b69f-12fb5f68321c 10004 127.0.0.1 10005 
+Jan 17 15:52:29.139 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-c32aaa3d-acd4-4584-b69f-12fb5f68321c 
+Jan 17 15:52:29.141 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 15:52:30.454 HYPERVISOR: exec_cmd: nio create_udp udp-ba791503-5d75-4085-94c6-cf1993f56ba1 10026 127.0.0.1 10027 
+Jan 17 15:52:30.460 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 2 0 udp-ba791503-5d75-4085-94c6-cf1993f56ba1 
+Jan 17 15:52:30.461 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 15:52:32.337 HYPERVISOR: exec_cmd: nio create_udp udp-c3622c43-43dc-4a82-a38b-ac026f6af643 10056 127.0.0.1 10057 
+Jan 17 15:52:32.344 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 3 0 udp-c3622c43-43dc-4a82-a38b-ac026f6af643 
+Jan 17 15:52:32.345 HYPERVISOR: exec_cmd: vm get_status R2 
