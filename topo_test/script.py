@@ -9,7 +9,7 @@ import glob
 
 
 #######utilisation des donnes depuuis le fichier json
-with open('topo_test/network.json', 'r') as fichier:
+with open('topo_sujet/network.json', 'r') as fichier:
     donnees = json.load(fichier)
 # print(donnees["data"][1]['name'])
 # for element in donnees["data"]:
@@ -157,15 +157,10 @@ def creation_fichier_config(filename, donnees,numero_json):
 
 
         for element in donnees["data"][numero_json]["interfaces"]:
-            print(as_routeur(element['neighbor']))
-            print("next")
-            print(donnees["data"][numero_json]["as"])
-            print("next")
             if (as_routeur(element['neighbor'])) == donnees["data"][numero_json]["as"]:
                 fichier.write("  neighbor ")
                 for truc in (donnees["data"]):
                     if truc['name'] == element['neighbor']:
-                        print("OUI")
                         fichier.write(truc["loopback"].split('/')[0])
                         fichier.write(" activate\n")
                      
@@ -240,7 +235,7 @@ def afficher_premieres_lignes(chemin_fichier, nombre_lignes=5):
 
 liste_chemins=[]
 j=0
-chemin = "gns3_files/project-files/dynamips/"
+chemin = "gns3_automatique2/project-files/dynamips/"
 for element in os.listdir(chemin):
     suite = "/configs/"
     fin = "*startup*.cfg"
