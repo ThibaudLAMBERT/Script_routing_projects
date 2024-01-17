@@ -1,0 +1,36 @@
+Jan 17 17:23:17.177 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 17 17:23:17.179 HYPERVISOR: Started on IP = localhost, TCP port = 65181.
+Jan 17 17:23:17.680 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 17 17:23:17.680 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips 
+Jan 17 17:23:17.680 GENERAL: working_dir=C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips
+Jan 17 17:23:17.680 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips\0c7667da-95df-4cef-8754-740a6dd6ad50 
+Jan 17 17:23:17.680 GENERAL: working_dir=C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips\0c7667da-95df-4cef-8754-740a6dd6ad50
+Jan 17 17:23:17.685 HYPERVISOR: exec_cmd: vm create R12 12 c7200 
+Jan 17 17:23:17.686 VM: VM R12 created.
+Jan 17 17:23:17.688 HYPERVISOR: exec_cmd: vm set_con_tcp_port R12 5025 
+Jan 17 17:23:17.689 HYPERVISOR: exec_cmd: c7200 get_mac_addr R12 
+Jan 17 17:23:17.689 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 17:23:17.689 HYPERVISOR: exec_cmd: vm slot_add_binding R12 0 0 C7200-IO-FE 
+Jan 17 17:23:17.689 HYPERVISOR: exec_cmd: vm set_disk0 R12 0 
+Jan 17 17:23:17.689 HYPERVISOR: exec_cmd: vm set_exec_area R12 64 
+Jan 17 17:23:17.689 HYPERVISOR: exec_cmd: vm set_ios R12 C:/Users/thiba/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:23:17.689 HYPERVISOR: exec_cmd: c7200 set_mac_addr R12 ca0c.0188.0000 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm set_nvram R12 512 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm set_ram R12 512 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm slot_add_binding R12 1 0 PA-GE 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm slot_add_binding R12 2 0 PA-GE 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm slot_add_binding R12 3 0 PA-GE 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 17:23:17.695 HYPERVISOR: exec_cmd: vm slot_add_binding R12 4 0 PA-GE 
+Jan 17 17:23:22.831 HYPERVISOR: exec_cmd: nio create_udp udp-23a865b5-4d36-4de7-9279-3319418f8c72 2107 127.0.0.1 2108 
+Jan 17 17:23:23.082 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 1 0 udp-23a865b5-4d36-4de7-9279-3319418f8c72 
+Jan 17 17:23:23.082 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 17:23:23.208 HYPERVISOR: exec_cmd: nio create_udp udp-add36ade-6907-4722-9d4c-ea0e61957a8d 2119 127.0.0.1 2120 
+Jan 17 17:23:23.208 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 2 0 udp-add36ade-6907-4722-9d4c-ea0e61957a8d 
+Jan 17 17:23:23.208 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 17 17:23:23.585 HYPERVISOR: exec_cmd: nio create_udp udp-b278b43e-ec50-449d-b77c-75ed6743ab69 2131 127.0.0.1 2132 
+Jan 17 17:23:23.585 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 3 0 udp-b278b43e-ec50-449d-b77c-75ed6743ab69 
+Jan 17 17:23:23.601 HYPERVISOR: exec_cmd: vm get_status R12 
