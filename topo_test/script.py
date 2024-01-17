@@ -37,8 +37,11 @@ def nom_routeur(nom_fichier):
             
 
 
-
-
+def as_routeur(neighbor):
+      for i in range (len(donnees["data"])):
+        if donnees["data"][i]['name'] == neighbor:
+            return donnees["data"][i]['as']
+           
 
 
 
@@ -154,10 +157,15 @@ def creation_fichier_config(filename, donnees,numero_json):
 
 
         for element in donnees["data"][numero_json]["interfaces"]:
-            if (element['neighbor'][1:2]) == donnees["data"][numero_json]["protocol"][:1]:
+            print(as_routeur(element['neighbor']))
+            print("next")
+            print(donnees["data"][numero_json]["as"])
+            print("next")
+            if (as_routeur(element['neighbor'])) == donnees["data"][numero_json]["as"]:
                 fichier.write("  neighbor ")
                 for truc in (donnees["data"]):
                     if truc['name'] == element['neighbor']:
+                        print("OUI")
                         fichier.write(truc["loopback"].split('/')[0])
                         fichier.write(" activate\n")
                      
