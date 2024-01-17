@@ -1,11 +1,12 @@
 import json
 
-def create_router(name, protocol, as_number, router_id, interfaces):
+def create_router(name, protocol, as_number, router_id, loopback_address, interfaces):
     return {
         "name": name,
         "protocol": protocol,
         "as": as_number,
         "id": router_id,
+        "loopback": loopback_address,
         "interfaces": interfaces
     }
 
