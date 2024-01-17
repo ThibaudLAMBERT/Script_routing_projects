@@ -1,0 +1,25 @@
+Jan 17 17:23:13.691 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 17 17:23:13.693 HYPERVISOR: Started on IP = localhost, TCP port = 65156.
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips 
+Jan 17 17:23:14.187 GENERAL: working_dir=C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips\6793e0c5-44c8-4308-9a75-bb3b7e52da26 
+Jan 17 17:23:14.187 GENERAL: working_dir=C:\Users\thiba\OneDrive\Documents\Script_routing_projects\gns3_automatique2\project-files\dynamips\6793e0c5-44c8-4308-9a75-bb3b7e52da26
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm create R4 4 c7200 
+Jan 17 17:23:14.187 VM: VM R4 created.
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5017 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: c7200 get_mac_addr R4 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-FE 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm set_exec_area R4 64 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/thiba/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: c7200 set_mac_addr R4 ca04.46e8.0000 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm set_nvram R4 512 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm set_ram R4 512 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 PA-GE 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm slot_add_binding R4 2 0 PA-GE 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm get_status R4 
+Jan 17 17:23:14.187 HYPERVISOR: exec_cmd: vm slot_add_binding R4 3 0 PA-GE 
