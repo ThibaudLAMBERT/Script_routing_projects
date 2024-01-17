@@ -21,3 +21,9 @@ Jan 17 17:23:17.127 HYPERVISOR: exec_cmd: vm get_status R11
 Jan 17 17:23:17.127 HYPERVISOR: exec_cmd: vm slot_add_binding R11 1 0 PA-GE 
 Jan 17 17:23:17.127 HYPERVISOR: exec_cmd: vm get_status R11 
 Jan 17 17:23:17.127 HYPERVISOR: exec_cmd: vm slot_add_binding R11 2 0 PA-GE 
+Jan 17 17:23:23.302 HYPERVISOR: exec_cmd: nio create_udp udp-013fabbf-5ceb-46b6-bf33-f300825bff62 2125 127.0.0.1 2126 
+Jan 17 17:23:23.538 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 1 0 udp-013fabbf-5ceb-46b6-bf33-f300825bff62 
+Jan 17 17:23:23.538 HYPERVISOR: exec_cmd: vm get_status R11 
+Jan 17 17:23:23.585 HYPERVISOR: exec_cmd: nio create_udp udp-a943bc47-5a47-45b3-b36f-8a33699619e2 2129 127.0.0.1 2130 
+Jan 17 17:23:23.585 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R11 2 0 udp-a943bc47-5a47-45b3-b36f-8a33699619e2 
+Jan 17 17:23:23.585 HYPERVISOR: exec_cmd: vm get_status R11 

@@ -23,3 +23,12 @@ Jan 17 17:23:13.086 HYPERVISOR: exec_cmd: vm get_status R2
 Jan 17 17:23:13.086 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 PA-GE 
 Jan 17 17:23:13.086 HYPERVISOR: exec_cmd: vm get_status R2 
 Jan 17 17:23:13.086 HYPERVISOR: exec_cmd: vm slot_add_binding R2 3 0 PA-GE 
+Jan 17 17:23:19.127 HYPERVISOR: exec_cmd: nio create_udp udp-b3b3a924-299b-46aa-9456-773b835baeaa 2004 127.0.0.1 2005 
+Jan 17 17:23:19.364 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 1 0 udp-b3b3a924-299b-46aa-9456-773b835baeaa 
+Jan 17 17:23:19.364 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 17:23:20.342 HYPERVISOR: exec_cmd: nio create_udp udp-6d85542f-5e21-4d11-8314-0b8726926f7b 2026 127.0.0.1 2027 
+Jan 17 17:23:20.342 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 2 0 udp-6d85542f-5e21-4d11-8314-0b8726926f7b 
+Jan 17 17:23:20.342 HYPERVISOR: exec_cmd: vm get_status R2 
+Jan 17 17:23:21.665 HYPERVISOR: exec_cmd: nio create_udp udp-60fe00f7-bb14-4f39-931a-442b63198912 2057 127.0.0.1 2058 
+Jan 17 17:23:21.665 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 3 0 udp-60fe00f7-bb14-4f39-931a-442b63198912 
+Jan 17 17:23:21.665 HYPERVISOR: exec_cmd: vm get_status R2 

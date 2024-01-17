@@ -8,3 +8,7 @@ UDP tunnel connecting from local port 2015 to IPv4 addresss 127.0.0.1 on port 20
 UDP tunnel connecting from local port 2012 to IPv4 addresss 127.0.0.1 on port 2013
 Source NIO listener thread for DYNAMIPS-2014-2015 has started
 Destination NIO listener thread for DYNAMIPS-2014-2015 has started
+UDP tunnel connecting from local port 2060 to IPv4 addresss 127.0.0.1 on port 2059
+UDP tunnel connecting from local port 2056 to IPv4 addresss 127.0.0.1 on port 2055
+Source NIO listener thread for DYNAMIPS-2059-2060 has started
+Destination NIO listener thread for DYNAMIPS-2059-2060 has started

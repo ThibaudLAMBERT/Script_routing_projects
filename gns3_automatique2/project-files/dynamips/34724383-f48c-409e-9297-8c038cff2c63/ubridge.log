@@ -8,3 +8,7 @@ UDP tunnel connecting from local port 2027 to IPv4 addresss 127.0.0.1 on port 20
 UDP tunnel connecting from local port 2024 to IPv4 addresss 127.0.0.1 on port 2025
 Source NIO listener thread for DYNAMIPS-2026-2027 has started
 Destination NIO listener thread for DYNAMIPS-2026-2027 has started
+UDP tunnel connecting from local port 2058 to IPv4 addresss 127.0.0.1 on port 2057
+UDP tunnel connecting from local port 2055 to IPv4 addresss 127.0.0.1 on port 2056
+Source NIO listener thread for DYNAMIPS-2057-2058 has started
+Destination NIO listener thread for DYNAMIPS-2057-2058 has started
