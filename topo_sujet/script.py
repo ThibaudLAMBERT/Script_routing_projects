@@ -120,36 +120,36 @@ def creation_fichier_config(filename, donnees,numero_json):
         fichier.write(" bgp log-neighbor-changes\n")
         fichier.write(" no bgp default ipv4-unicast\n")
 
-        for element in donnees["data"][numero_json]["interfaces"]:
-            if (as_routeur(element['neighbor'])) == donnees["data"][numero_json]["as"]:
+        for voisins_data in donnees["data"][numero_json]["interfaces"]:
+            if (as_routeur(voisins_data['neighbor'])) == donnees["data"][numero_json]["as"]:
                 fichier.write(" neighbor ")
-                for truc in (donnees["data"]):
-                    if truc['name'] == element['neighbor']:
-                        fichier.write(truc["loopback"].split('/')[0])
+                for routeur_data in (donnees["data"]):
+                    if routeur_data['name'] == voisins_data['neighbor']:
+                        fichier.write(routeur_data["loopback"].split('/')[0])
                         fichier.write(" remote-as ")
-                        fichier.write(truc["as"])
+                        fichier.write(routeur_data["as"])
                         fichier.write("\n neighbor ")
-                        fichier.write(truc["loopback"].split('/')[0])
+                        fichier.write(routeur_data["loopback"].split('/')[0])
                         fichier.write(" update-source Loopback0 ")
                         fichier.write("\n")
             else:
                 
                 fichier.write(" neighbor ")
-                for truc in (donnees["data"]):
+                for routeur_data in (donnees["data"]):
                     
-                    if truc['name'] == element['neighbor']:
+                    if routeur_data['name'] == voisins_data['neighbor']:
                         
-                        for i in range (len(truc["interfaces"])):
+                        for i in range (len(routeur_data["interfaces"])):
                            
-                            if nomrouteur == truc["interfaces"][i]["neighbor"]:
+                            if nomrouteur == routeur_data["interfaces"][i]["neighbor"]:
                                 
-                                fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
+                                fichier.write(routeur_data["interfaces"][i]["ip"].split('/')[0])
 
 
 
                         
                         fichier.write(" remote-as ")
-                        fichier.write(truc["as"])
+                        fichier.write(routeur_data["as"])
                         fichier.write("\n")
         fichier.write(" address-family ipv4\n")
         fichier.write(" exit-address-family\n")
@@ -158,11 +158,11 @@ def creation_fichier_config(filename, donnees,numero_json):
         
                 
 
-        for element in donnees["data"][numero_json]["interfaces"]:
-            if (as_routeur(element['neighbor'])) == donnees["data"][numero_json]["as"]:
+        for voisins_data in donnees["data"][numero_json]["interfaces"]:
+            if (as_routeur(voisins_data['neighbor'])) == donnees["data"][numero_json]["as"]:
                 fichier.write("  neighbor ")
                 for truc in (donnees["data"]):
-                    if truc['name'] == element['neighbor']:
+                    if truc['name'] == voisins_data['neighbor']:
                         fichier.write(truc["loopback"].split('/')[0])
                         fichier.write(" activate\n")
                      
@@ -173,7 +173,7 @@ def creation_fichier_config(filename, donnees,numero_json):
                 fichier.write("  neighbor ")
                 for truc in (donnees["data"]):
                     
-                    if truc['name'] == element['neighbor']:
+                    if truc['name'] == voisins_data['neighbor']:
                         
                         for i in range (len(truc["interfaces"])):
                             
