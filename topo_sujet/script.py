@@ -199,10 +199,14 @@ def creation_fichier_config(filename, donnees,numero_json):
             fichier.write(donnees["data"][numero_json]['id'])
             fichier.write("\n")
             for data_voisins in donnees["data"][numero_json]["interfaces"]:
-                if (data_voisins['neighbor'][1:2]) == "R":
+                # print(as_routeur(data_voisins['neighbor']))
+                # print(donnees["data"][numero_json]['as'])
+                # print("next")
+                if (as_routeur(data_voisins['neighbor'])) != donnees["data"][numero_json]['as']:
                     fichier.write(" passive-interface ")
                     fichier.write(data_voisins['name'])
                     fichier.write("\n")
+                    print("hihihihi")
                     
                     
         for neighbor in donnees["data"][numero_json]["interfaces"]:
