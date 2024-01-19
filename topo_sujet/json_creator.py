@@ -10,11 +10,12 @@ def create_router(name, protocol, as_number, router_id, loopback_address, interf
         "interfaces": interfaces
     }
 
-def create_interface(name, ip, neighbor):
+def create_interface(name, ip, neighbor, ospf_cost="default"):
     return {
         "name": name,
         "ip": ip,
-        "neighbor": neighbor
+        "neighbor": neighbor,
+        "ospf_cost": ospf_cost
     }
 
 routers = [
