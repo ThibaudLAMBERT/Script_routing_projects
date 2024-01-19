@@ -235,7 +235,7 @@ def afficher_premieres_lignes(chemin_fichier, nombre_lignes=5):
 
 liste_chemins=[]
 j=0
-chemin = "gns3_automatique2/project-files/dynamips/"
+chemin = "gns3_sujet/project-files/dynamips/"
 for element in os.listdir(chemin):
     suite = "/configs/"
     fin = "*startup*.cfg"
@@ -258,7 +258,7 @@ for element in os.listdir(chemin):
 
 
 #là, on appelle à la main la fonction, et ca fonctionne bien tout va bien                
-fichier_cfg = 'gns3_files/project-files/dynamips/ad27bb0b-dedf-408c-9304-e543a19c4627/configs/i1_startup-config.cfg'
+fichier_cfg = 'gn3_sujet/project-files/dynamips/ad27bb0b-dedf-408c-9304-e543a19c4627/configs/i1_startup-config.cfg'
 #creation_fichier_config(fichier_cfg, donnees)
 #print(liste_chemins)
 #print(donnees)
