@@ -73,7 +73,7 @@ def creation_fichier_config(filename, donnees,numero_json):
         fichier.write("ipv6 cef\n")
         fichier.write("multilink bundle-name authenticated\n")
         fichier.write("ip tcp synwait-time 5\n")
-
+        
 
         fichier.write("interface Loopback0\n")
         fichier.write(" no ip address\n")
@@ -155,6 +155,8 @@ def creation_fichier_config(filename, donnees,numero_json):
         fichier.write(" exit-address-family\n")
         fichier.write(" address-family ipv6\n")
 
+        
+                
 
         for element in donnees["data"][numero_json]["interfaces"]:
             if (as_routeur(element['neighbor'])) == donnees["data"][numero_json]["as"]:
@@ -201,6 +203,22 @@ def creation_fichier_config(filename, donnees,numero_json):
                     fichier.write(" passive-interface ")
                     fichier.write(element['name'])
                     fichier.write("\n")
+                    
+                    
+        for neighbor in donnees["data"][numero_json]["interfaces"]:
+            if neighbor["ospf_cost"]!="default" and donnees["data"][numero_json]["protocol"]=="OSPF":
+                print ("oui")
+                fichier.write("router ospf ")
+                fichier.write(donnees["data"][numero_json]["as"])
+                fichier.write("\n")
+                fichier.write(" interface ")
+                fichier.write(neighbor["name"])
+                fichier.write("\n")
+                fichier.write("  ip ospf cost ")
+                fichier.write(neighbor["ospf_cost"])
+                fichier.write("\n")
+                
+                
         fichier.write("control-plane\n")
         fichier.write("line con 0\n")
         fichier.write(" exec-timeout 0 0\n")
@@ -258,7 +276,7 @@ for element in os.listdir(chemin):
 
 
 #là, on appelle à la main la fonction, et ca fonctionne bien tout va bien                
-fichier_cfg = 'gn3_sujet/project-files/dynamips/ad27bb0b-dedf-408c-9304-e543a19c4627/configs/i1_startup-config.cfg'
+# fichier_cfg = 'gn3_sujet/project-files/dynamips/ad27bb0b-dedf-408c-9304-e543a19c4627/configs/i1_startup-config.cfg'
 #creation_fichier_config(fichier_cfg, donnees)
 #print(liste_chemins)
 #print(donnees)
