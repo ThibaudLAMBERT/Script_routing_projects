@@ -161,9 +161,9 @@ def creation_fichier_config(filename, donnees,numero_json):
         for voisins_data in donnees["data"][numero_json]["interfaces"]:
             if (as_routeur(voisins_data['neighbor'])) == donnees["data"][numero_json]["as"]:
                 fichier.write("  neighbor ")
-                for truc in (donnees["data"]):
-                    if truc['name'] == voisins_data['neighbor']:
-                        fichier.write(truc["loopback"].split('/')[0])
+                for routeurs_data in (donnees["data"]):
+                    if routeurs_data['name'] == voisins_data['neighbor']:
+                        fichier.write(routeurs_data["loopback"].split('/')[0])
                         fichier.write(" activate\n")
                      
 
@@ -171,15 +171,15 @@ def creation_fichier_config(filename, donnees,numero_json):
             else:
                 
                 fichier.write("  neighbor ")
-                for truc in (donnees["data"]):
+                for routeurs_data in (donnees["data"]):
                     
-                    if truc['name'] == voisins_data['neighbor']:
+                    if routeurs_data['name'] == voisins_data['neighbor']:
                         
-                        for i in range (len(truc["interfaces"])):
+                        for i in range (len(routeurs_data["interfaces"])):
                             
-                            if nomrouteur == truc["interfaces"][i]["neighbor"]:
+                            if nomrouteur == routeurs_data["interfaces"][i]["neighbor"]:
                                 
-                                fichier.write(truc["interfaces"][i]["ip"].split('/')[0])
+                                fichier.write(routeurs_data["interfaces"][i]["ip"].split('/')[0])
                                 fichier.write(" activate\n")
         fichier.write(" exit-address-family\n")                    
         fichier.write("ip forward-protocol nd\n")
@@ -198,10 +198,10 @@ def creation_fichier_config(filename, donnees,numero_json):
             fichier.write(" router-id ")
             fichier.write(donnees["data"][numero_json]['id'])
             fichier.write("\n")
-            for element in donnees["data"][numero_json]["interfaces"]:
-                if (element['neighbor'][1:2]) == "R":
+            for data_voisins in donnees["data"][numero_json]["interfaces"]:
+                if (data_voisins['neighbor'][1:2]) == "R":
                     fichier.write(" passive-interface ")
-                    fichier.write(element['name'])
+                    fichier.write(data_voisins['name'])
                     fichier.write("\n")
                     
                     
@@ -254,10 +254,10 @@ def afficher_premieres_lignes(chemin_fichier, nombre_lignes=5):
 liste_chemins=[]
 j=0
 chemin = "gns3_sujet/project-files/dynamips/"
-for element in os.listdir(chemin):
+for files in os.listdir(chemin):
     suite = "/configs/"
     fin = "*startup*.cfg"
-    dossier = chemin + element + suite 
+    dossier = chemin + files + suite 
     
     
     if os.path.exists(dossier):
