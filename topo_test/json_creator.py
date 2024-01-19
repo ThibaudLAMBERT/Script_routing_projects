@@ -46,7 +46,7 @@ routers = [
 
 json_data = {"data": routers}
 
-with open("network_topology.json", "w") as json_file:
+with open("topo_test/network_topology.json", "w") as json_file:
     json.dump(json_data, json_file, indent=4)
 
 print("JSON file created: network.json")
