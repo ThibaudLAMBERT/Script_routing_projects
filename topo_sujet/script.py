@@ -120,37 +120,64 @@ def creation_fichier_config(filename, donnees,numero_json):
         fichier.write(" bgp log-neighbor-changes\n")
         fichier.write(" no bgp default ipv4-unicast\n")
 
-        for voisins_data in donnees["data"][numero_json]["interfaces"]:
-            if (as_routeur(voisins_data['neighbor'])) == donnees["data"][numero_json]["as"]:
+        for routeur_data in donnees["data"]:
+            if routeur_data["as"]==donnees["data"][numero_json]["as"]:
                 fichier.write(" neighbor ")
-                for routeur_data in (donnees["data"]):
-                    if routeur_data['name'] == voisins_data['neighbor']:
-                        fichier.write(routeur_data["loopback"].split('/')[0])
-                        fichier.write(" remote-as ")
-                        fichier.write(routeur_data["as"])
-                        fichier.write("\n neighbor ")
-                        fichier.write(routeur_data["loopback"].split('/')[0])
-                        fichier.write(" update-source Loopback0 ")
-                        fichier.write("\n")
+                fichier.write(routeur_data["loopback"].split('/')[0])
+                fichier.write(" remote-as ")
+                fichier.write(routeur_data["as"])
+                fichier.write("\n neighbor ")
+                fichier.write(routeur_data["loopback"].split('/')[0])
+                fichier.write(" update-source Loopback0 ")
+                fichier.write("\n")
             else:
-                
-                fichier.write(" neighbor ")
-                for routeur_data in (donnees["data"]):
-                    
+                print("1")
+                for voisins_data in donnees["data"][numero_json]["interfaces"]:
                     if routeur_data['name'] == voisins_data['neighbor']:
-                        
+                        print("2")
                         for i in range (len(routeur_data["interfaces"])):
-                           
                             if nomrouteur == routeur_data["interfaces"][i]["neighbor"]:
-                                
+                                fichier.write(" neighbor ")
+                                print("3")
                                 fichier.write(routeur_data["interfaces"][i]["ip"].split('/')[0])
-
-
-
-                        
                         fichier.write(" remote-as ")
                         fichier.write(routeur_data["as"])
                         fichier.write("\n")
+        
+        
+    #  """    
+    #  """    for voisins_data in donnees["data"][numero_json]["interfaces"]:
+    #         if (as_routeur(voisins_data['neighbor'])) == donnees["data"][numero_json]["as"]:
+    #             fichier.write(" neighbor ")
+    #             for routeur_data in (donnees["data"]):
+    #                 if routeur_data['name'] == voisins_data['neighbor']:
+    #                     fichier.write(routeur_data["loopback"].split('/')[0])
+    #                     fichier.write(" remote-as ")
+    #                     fichier.write(routeur_data["as"])
+    #                     fichier.write("\n neighbor ")
+    #                     fichier.write(routeur_data["loopback"].split('/')[0])
+    #                     fichier.write(" update-source Loopback0 ")
+    #                     fichier.write("\n")
+    #         else:
+                
+    #             fichier.write(" neighbor ")
+    #             for routeur_data in (donnees["data"]):
+                    
+    #                 if routeur_data['name'] == voisins_data['neighbor']:
+                        
+    #                     for i in range (len(routeur_data["interfaces"])):
+                           
+    #                         if nomrouteur == routeur_data["interfaces"][i]["neighbor"]:
+                                
+    #                             fichier.write(routeur_data["interfaces"][i]["ip"].split('/')[0])
+
+
+
+                        
+    #                     fichier.write(" remote-as ")
+    #                     fichier.write(routeur_data["as"])
+    #                     fichier.write("\n") """ """
+                        
         fichier.write(" address-family ipv4\n")
         fichier.write(" exit-address-family\n")
         fichier.write(" address-family ipv6\n")
