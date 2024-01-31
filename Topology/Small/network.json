@@ -10,12 +10,16 @@
                 {
                     "name": "g1/0",
                     "ip": "2001:111:1:1::2/64",
-                    "neighbor": "RR2"
+                    "neighbor": "RR2",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 },
                 {
                     "name": "g2/0",
                     "ip": "2001:111:1:2::2/64",
-                    "neighbor": "RR3"
+                    "neighbor": "RR3",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 }
             ]
         },
@@ -29,12 +33,16 @@
                 {
                     "name": "g1/0",
                     "ip": "2001:111:1:1::1/64",
-                    "neighbor": "RR1"
+                    "neighbor": "RR1",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 },
                 {
                     "name": "f0/0",
                     "ip": "2001:100:1::1/64",
-                    "neighbor": "RO2"
+                    "neighbor": "RO2",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 }
             ]
         },
@@ -48,12 +56,16 @@
                 {
                     "name": "g1/0",
                     "ip": "2001:111:1:2::1/64",
-                    "neighbor": "RR1"
+                    "neighbor": "RR1",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 },
                 {
                     "name": "f0/0",
                     "ip": "2001:100:2::1/64",
-                    "neighbor": "RO3"
+                    "neighbor": "RO3",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 }
             ]
         },
@@ -67,12 +79,16 @@
                 {
                     "name": "g1/0",
                     "ip": "2001:112:1:1::1/64",
-                    "neighbor": "RO1"
+                    "neighbor": "RO1",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 },
                 {
                     "name": "f0/0",
                     "ip": "2001:100:1::2/64",
-                    "neighbor": "RR2"
+                    "neighbor": "RR2",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 }
             ]
         },
@@ -86,12 +102,16 @@
                 {
                     "name": "g1/0",
                     "ip": "2001:112:1:1::2/64",
-                    "neighbor": "RO2"
+                    "neighbor": "RO2",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 },
                 {
                     "name": "g2/0",
                     "ip": "2001:112:1:2::2/64",
-                    "neighbor": "RO3"
+                    "neighbor": "RO3",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 }
             ]
         },
@@ -105,12 +125,16 @@
                 {
                     "name": "g1/0",
                     "ip": "2001:112:1:2::1/64",
-                    "neighbor": "RO1"
+                    "neighbor": "RO1",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 },
                 {
                     "name": "f0/0",
                     "ip": "2001:100:2::2/64",
-                    "neighbor": "RR2"
+                    "neighbor": "RR2",
+                    "ospf_cost": "default",
+                    "local_pref": "None"
                 }
             ]
         }

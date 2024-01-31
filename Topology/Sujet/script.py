@@ -9,12 +9,9 @@ import glob
 
 
 #######utilisation des donnes depuuis le fichier json
-with open('topo_ville/network.json', 'r') as fichier:
+with open('Topology/Sujet/network.json', 'r') as fichier:
     donnees = json.load(fichier)
-# print(donnees["data"][1]['name'])
-# for element in donnees["data"]:
-#     print(element['name'])
-# print(len(donnees["data"]))
+
 #######supprimer le fichier cfg
 def supprimer_all_lines(filename):
 
@@ -263,7 +260,7 @@ def afficher_premieres_lignes(chemin_fichier, nombre_lignes=5):
 
 liste_chemins=[]
 j=0
-chemin = "GNS3_ville/project-files/dynamips/"
+chemin = "GNS3/Sujet/project-files/dynamips/"
 for files in os.listdir(chemin):
     suite = "/configs/"
     fin = "*startup*.cfg"
@@ -281,18 +278,10 @@ for files in os.listdir(chemin):
                 
                 
                 liste_chemins.append(chemin_corrige)
-# print(liste_chemins)
 
 
 
-#là, on appelle à la main la fonction, et ca fonctionne bien tout va bien                
-# fichier_cfg = 'gn3_sujet/project-files/dynamips/ad27bb0b-dedf-408c-9304-e543a19c4627/configs/i1_startup-config.cfg'
-#creation_fichier_config(fichier_cfg, donnees)
-#print(liste_chemins)
-#print(donnees)
-#print(nuumero_json)
-#quand je fais une boucle, qui semble vraiment etre la meme chose qu'au dessus, juste pour tous les chemins un par un
-#eh bah ca marche plus, et j'ai des erreurs dans ma fonction creation_fichier_config, peut etre un probleme de types
+
 
 for fichier_routeurs in liste_chemins:
     nomrouteur = nom_routeur(fichier_routeurs)
@@ -301,8 +290,7 @@ for fichier_routeurs in liste_chemins:
             numero_json=i
             creation_fichier_config(fichier_routeurs, donnees,numero_json)
 
-#ducoup c'est la j'ai mis le numero_json à cet endroit plutôt qu'à l'intérieur de la fonction creation_fichier_config 
-#et j'ai passé numero_json en paramètre de la fonction 
+
 
 # Ajouter ces lignes pour vérifier le nombre de noms de routeurs et de fichiers de configuration
 

@@ -10,12 +10,15 @@ def create_router(name, protocol, as_number, router_id, loopback_address, interf
         "interfaces": interfaces
     }
 
-def create_interface(name, ip, neighbor):
+def create_interface(name, ip, neighbor, ospf_cost="default", local_pref="None"):
     return {
         "name": name,
         "ip": ip,
-        "neighbor": neighbor
+        "neighbor": neighbor,
+        "ospf_cost": ospf_cost,
+        "local_pref" : local_pref
     }
+
 
 routers = [
     create_router("RR1", "RIP", "111", "1.1.1.1", "2001:111::1/128",  [
@@ -46,7 +49,7 @@ routers = [
 
 json_data = {"data": routers}
 
-with open("topo_test/network_topology.json", "w") as json_file:
+with open("Topology/Small/network_topology.json", "w") as json_file:
     json.dump(json_data, json_file, indent=4)
 
 print("JSON file created: network.json")
