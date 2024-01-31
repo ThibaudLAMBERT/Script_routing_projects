@@ -39,6 +39,10 @@ Ce dossier  contient aussi le script qui génère les configurations à partir d
 
 ### Fichier d'intention et configuration
 
-Voici notre fichier d'intention pour la topologie du sujet : https://github.com/ThibaudLAMBERT/Script_routing_projects/blob/main/Topology/Sujet/network.json
+Voici notre fichier d'intention pour la topologie du sujet : 
 
-Voici une configuration pour un routeur :
+https://github.com/ThibaudLAMBERT/Script_routing_projects/blob/main/Topology/Sujet/network.json
+
+Voici un exemple d'une configuration pour un routeur :
+
+https://github.com/ThibaudLAMBERT/Script_routing_projects/blob/main/GNS3/Sujet/project-files/dynamips/847a1fd9-fc80-425a-b18f-027910481f86/configs/i5_startup-config.cfg
