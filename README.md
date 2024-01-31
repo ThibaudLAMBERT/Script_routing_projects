@@ -16,6 +16,7 @@ cd Script_routing_projects
 
 ## Description des dossiers
 
+
 ### GNS3_sujet
 
 Ce dossier contient :
@@ -25,9 +26,11 @@ Ce dossier contient :
 - le fichier d'intention
 - le script qui génère les configurations à partir du json et qui les mets dans les fichiers configs adaptés
 
+
 ### GNS3_other_topology : 
 
 Ce dossier contient les mêmes fichiers que le précédent mais avec une topologie différentes
+
 
 
 ### Fichier d'intention et configuration
