@@ -33,8 +33,7 @@ Ce dossier contient les différents scripts qui nous ont permis d'automatiser la
 
 - un script de génération d'un fichier d'intention (json) : json_creator.py
 - le fichier d'intention : network.json
-  
-Ce dossier  contient aussi le script qui génère les configurations à partir du json et qui les mets dans les fichiers configs adaptés : script.py
+- un script qui génère les configurations à partir du json et qui les mets dans les fichiers configs adaptés : script.py
 
 
 ### Fichier d'intention et configuration
