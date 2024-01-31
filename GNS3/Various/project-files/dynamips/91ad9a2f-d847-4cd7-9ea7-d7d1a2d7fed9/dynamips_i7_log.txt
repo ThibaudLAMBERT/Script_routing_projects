@@ -1,0 +1,50 @@
+Jan 24 17:28:02.363 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 24 17:28:02.363 HYPERVISOR: Started on IP = localhost, TCP port = 54163.
+Jan 24 17:28:02.878 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 24 17:28:02.878 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips 
+Jan 24 17:28:02.878 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips
+Jan 24 17:28:02.878 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\91ad9a2f-d847-4cd7-9ea7-d7d1a2d7fed9 
+Jan 24 17:28:02.888 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\91ad9a2f-d847-4cd7-9ea7-d7d1a2d7fed9
+Jan 24 17:28:02.888 HYPERVISOR: exec_cmd: vm create R7 7 c7200 
+Jan 24 17:28:02.889 VM: VM R7 created.
+Jan 24 17:28:02.889 HYPERVISOR: exec_cmd: vm set_con_tcp_port R7 5006 
+Jan 24 17:28:02.889 HYPERVISOR: exec_cmd: c7200 get_mac_addr R7 
+Jan 24 17:28:02.889 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:28:02.889 HYPERVISOR: exec_cmd: vm slot_add_binding R7 0 0 C7200-IO-FE 
+Jan 24 17:28:02.890 HYPERVISOR: exec_cmd: vm set_disk0 R7 0 
+Jan 24 17:28:02.890 HYPERVISOR: exec_cmd: vm set_exec_area R7 64 
+Jan 24 17:28:02.890 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:28:02.890 HYPERVISOR: exec_cmd: vm set_idle_pc R7 0x62cc83a0 
+Jan 24 17:28:02.892 HYPERVISOR: exec_cmd: vm set_ios R7 C:/Users/ajkfh/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 24 17:28:02.892 HYPERVISOR: exec_cmd: c7200 set_mac_addr R7 ca07.862c.0000 
+Jan 24 17:28:02.893 HYPERVISOR: exec_cmd: vm set_nvram R7 512 
+Jan 24 17:28:02.893 HYPERVISOR: exec_cmd: vm set_ram R7 512 
+Jan 24 17:28:02.893 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:28:02.893 HYPERVISOR: exec_cmd: vm slot_add_binding R7 1 0 PA-GE 
+Jan 24 17:28:02.894 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:28:02.894 HYPERVISOR: exec_cmd: vm slot_add_binding R7 2 0 PA-GE 
+Jan 24 17:28:02.896 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:28:02.896 HYPERVISOR: exec_cmd: vm slot_add_binding R7 3 0 PA-GE 
+Jan 24 17:28:07.043 HYPERVISOR: exec_cmd: nio create_udp udp-88851a9d-1080-451f-b702-5732c30d6ace 2020 127.0.0.1 2021 
+Jan 24 17:28:07.279 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R7 0 0 udp-88851a9d-1080-451f-b702-5732c30d6ace 
+Jan 24 17:28:07.279 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:28:08.363 HYPERVISOR: exec_cmd: nio create_udp udp-8bec3a7e-3b6c-419e-921f-531c6d356fa6 2038 127.0.0.1 2039 
+Jan 24 17:28:08.373 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R7 1 0 udp-8bec3a7e-3b6c-419e-921f-531c6d356fa6 
+Jan 24 17:28:08.373 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:28:08.657 HYPERVISOR: exec_cmd: nio create_udp udp-e31da715-851d-47fb-b940-7d7be7173951 2046 127.0.0.1 2047 
+Jan 24 17:28:08.660 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R7 2 0 udp-e31da715-851d-47fb-b940-7d7be7173951 
+Jan 24 17:28:08.661 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:33:26.048 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:33:26.048 HYPERVISOR: exec_cmd: vm extract_config R7 
+Jan 24 17:36:38.922 HYPERVISOR: exec_cmd: vm set_ghost_status R7 2 
+Jan 24 17:36:38.923 HYPERVISOR: exec_cmd: vm set_ghost_file R7 C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 24 17:36:38.923 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:36:38.942 HYPERVISOR: exec_cmd: vm set_config R7 configs\i7_startup-config.cfg 
+Jan 24 17:36:38.945 HYPERVISOR: exec_cmd: vm start R7 
+Jan 24 17:37:09.256 HYPERVISOR: exec_cmd: vm extract_config R7 
+Jan 24 17:38:06.732 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 24 17:38:06.732 HYPERVISOR: exec_cmd: vm stop R7 
+Jan 24 17:38:06.838 VM: VM R7 shutdown.
+Jan 24 17:38:06.839 HYPERVISOR: exec_cmd: vm extract_config R7 
+Jan 25 14:12:30.024 HYPERVISOR: exec_cmd: vm get_status R7 
+Jan 25 14:12:30.024 HYPERVISOR: exec_cmd: vm extract_config R7 

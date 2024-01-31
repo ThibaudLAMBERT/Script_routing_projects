@@ -1,0 +1,50 @@
+Jan 24 17:28:05.362 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 24 17:28:05.363 HYPERVISOR: Started on IP = localhost, TCP port = 54188.
+Jan 24 17:28:05.876 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 24 17:28:05.876 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips 
+Jan 24 17:28:05.876 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips
+Jan 24 17:28:05.877 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\2ac01024-dd83-48fe-ac1a-62b1ab52dc0a 
+Jan 24 17:28:05.877 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\2ac01024-dd83-48fe-ac1a-62b1ab52dc0a
+Jan 24 17:28:05.877 HYPERVISOR: exec_cmd: vm create R15 15 c7200 
+Jan 24 17:28:05.878 VM: VM R15 created.
+Jan 24 17:28:05.879 HYPERVISOR: exec_cmd: vm set_con_tcp_port R15 5014 
+Jan 24 17:28:05.879 HYPERVISOR: exec_cmd: c7200 get_mac_addr R15 
+Jan 24 17:28:05.879 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:28:05.879 HYPERVISOR: exec_cmd: vm slot_add_binding R15 0 0 C7200-IO-FE 
+Jan 24 17:28:05.879 HYPERVISOR: exec_cmd: vm set_disk0 R15 0 
+Jan 24 17:28:05.880 HYPERVISOR: exec_cmd: vm set_exec_area R15 64 
+Jan 24 17:28:05.880 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:28:05.880 HYPERVISOR: exec_cmd: vm set_idle_pc R15 0x62cc83a0 
+Jan 24 17:28:05.880 HYPERVISOR: exec_cmd: vm set_ios R15 C:/Users/ajkfh/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 24 17:28:05.881 HYPERVISOR: exec_cmd: c7200 set_mac_addr R15 ca0f.d700.0000 
+Jan 24 17:28:05.881 HYPERVISOR: exec_cmd: vm set_nvram R15 512 
+Jan 24 17:28:05.881 HYPERVISOR: exec_cmd: vm set_ram R15 512 
+Jan 24 17:28:05.882 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:28:05.882 HYPERVISOR: exec_cmd: vm slot_add_binding R15 1 0 PA-GE 
+Jan 24 17:28:05.882 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:28:05.883 HYPERVISOR: exec_cmd: vm slot_add_binding R15 2 0 PA-GE 
+Jan 24 17:28:05.883 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:28:05.883 HYPERVISOR: exec_cmd: vm slot_add_binding R15 3 0 PA-GE 
+Jan 24 17:28:09.992 HYPERVISOR: exec_cmd: nio create_udp udp-8ae0e486-fde0-468b-8df5-e0c1cfad4d07 2081 127.0.0.1 2082 
+Jan 24 17:28:10.243 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R15 1 0 udp-8ae0e486-fde0-468b-8df5-e0c1cfad4d07 
+Jan 24 17:28:10.244 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:28:10.309 HYPERVISOR: exec_cmd: nio create_udp udp-3b2d0fac-1ef0-45f7-a88c-ff900e179eac 2087 127.0.0.1 2088 
+Jan 24 17:28:10.311 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R15 2 0 udp-3b2d0fac-1ef0-45f7-a88c-ff900e179eac 
+Jan 24 17:28:10.312 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:28:10.373 HYPERVISOR: exec_cmd: nio create_udp udp-d488faca-98ec-4e23-970d-a641b739b9a3 2093 127.0.0.1 2094 
+Jan 24 17:28:10.375 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R15 3 0 udp-d488faca-98ec-4e23-970d-a641b739b9a3 
+Jan 24 17:28:10.375 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:33:26.063 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:33:26.063 HYPERVISOR: exec_cmd: vm extract_config R15 
+Jan 24 17:36:39.620 HYPERVISOR: exec_cmd: vm set_ghost_status R15 2 
+Jan 24 17:36:39.620 HYPERVISOR: exec_cmd: vm set_ghost_file R15 C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 24 17:36:39.621 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:36:39.638 HYPERVISOR: exec_cmd: vm set_config R15 configs\i15_startup-config.cfg 
+Jan 24 17:36:39.639 HYPERVISOR: exec_cmd: vm start R15 
+Jan 24 17:37:09.915 HYPERVISOR: exec_cmd: vm extract_config R15 
+Jan 24 17:38:07.002 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 24 17:38:07.002 HYPERVISOR: exec_cmd: vm stop R15 
+Jan 24 17:38:07.115 VM: VM R15 shutdown.
+Jan 24 17:38:07.116 HYPERVISOR: exec_cmd: vm extract_config R15 
+Jan 25 14:12:30.040 HYPERVISOR: exec_cmd: vm get_status R15 
+Jan 25 14:12:30.042 HYPERVISOR: exec_cmd: vm extract_config R15 

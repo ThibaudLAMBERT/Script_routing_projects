@@ -1,0 +1,8 @@
+cygwin warning:
+  MS-DOS style path detected: C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips
+  Preferred POSIX equivalent is: /cygdrive/c/Users/ajkfh/INSA/3TC/Script_routing_projects/GNS3_ville/project-files/dynamips
+  CYGWIN environment variable option "nodosfilewarning" turns off this warning.
+  Consult the user's guide for more details about POSIX paths:
+    http://cygwin.com/cygwin-ug-net/using.html#using-pathnames
+vm_mmap_open_file: unable to open file 'c7200_i1_nvram' (No such file or directory)
+C7200 'Ghost': generic_nvram_extract_config: Unknown error -61605

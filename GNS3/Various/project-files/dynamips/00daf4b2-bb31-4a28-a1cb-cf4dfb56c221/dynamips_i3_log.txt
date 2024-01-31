@@ -1,0 +1,45 @@
+Jan 24 17:28:01.118 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 24 17:28:01.119 HYPERVISOR: Started on IP = localhost, TCP port = 54151.
+Jan 24 17:28:01.640 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 24 17:28:01.641 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips 
+Jan 24 17:28:01.641 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips
+Jan 24 17:28:01.641 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\00daf4b2-bb31-4a28-a1cb-cf4dfb56c221 
+Jan 24 17:28:01.641 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\00daf4b2-bb31-4a28-a1cb-cf4dfb56c221
+Jan 24 17:28:01.641 HYPERVISOR: exec_cmd: vm create R3 3 c7200 
+Jan 24 17:28:01.642 VM: VM R3 created.
+Jan 24 17:28:01.642 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5002 
+Jan 24 17:28:01.642 HYPERVISOR: exec_cmd: c7200 get_mac_addr R3 
+Jan 24 17:28:01.642 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:28:01.642 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 0 C7200-IO-FE 
+Jan 24 17:28:01.644 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+Jan 24 17:28:01.644 HYPERVISOR: exec_cmd: vm set_exec_area R3 64 
+Jan 24 17:28:01.644 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:28:01.644 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x62cc83a0 
+Jan 24 17:28:01.645 HYPERVISOR: exec_cmd: vm set_ios R3 C:/Users/ajkfh/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 24 17:28:01.645 HYPERVISOR: exec_cmd: c7200 set_mac_addr R3 ca03.44cc.0000 
+Jan 24 17:28:01.646 HYPERVISOR: exec_cmd: vm set_nvram R3 512 
+Jan 24 17:28:01.646 HYPERVISOR: exec_cmd: vm set_ram R3 512 
+Jan 24 17:28:01.647 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:28:01.647 HYPERVISOR: exec_cmd: vm slot_add_binding R3 1 0 PA-GE 
+Jan 24 17:28:01.647 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:28:01.647 HYPERVISOR: exec_cmd: vm slot_add_binding R3 2 0 PA-GE 
+Jan 24 17:28:05.925 HYPERVISOR: exec_cmd: nio create_udp udp-7de6c3d4-5efa-4e99-a6f0-c4179143917f 2002 127.0.0.1 2003 
+Jan 24 17:28:06.171 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 1 0 udp-7de6c3d4-5efa-4e99-a6f0-c4179143917f 
+Jan 24 17:28:06.172 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:28:06.748 HYPERVISOR: exec_cmd: nio create_udp udp-80af887f-ce97-4a97-bd74-a533f8cbfa31 2014 127.0.0.1 2015 
+Jan 24 17:28:06.750 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 0 udp-80af887f-ce97-4a97-bd74-a533f8cbfa31 
+Jan 24 17:28:06.750 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:33:26.039 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:33:26.040 HYPERVISOR: exec_cmd: vm extract_config R3 
+Jan 24 17:36:38.293 HYPERVISOR: exec_cmd: vm set_ghost_status R3 2 
+Jan 24 17:36:38.307 HYPERVISOR: exec_cmd: vm set_ghost_file R3 C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 24 17:36:38.308 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:36:38.322 HYPERVISOR: exec_cmd: vm set_config R3 configs\i3_startup-config.cfg 
+Jan 24 17:36:38.322 HYPERVISOR: exec_cmd: vm start R3 
+Jan 24 17:37:08.608 HYPERVISOR: exec_cmd: vm extract_config R3 
+Jan 24 17:38:06.546 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 24 17:38:06.546 HYPERVISOR: exec_cmd: vm stop R3 
+Jan 24 17:38:06.631 VM: VM R3 shutdown.
+Jan 24 17:38:06.633 HYPERVISOR: exec_cmd: vm extract_config R3 
+Jan 25 14:12:30.006 HYPERVISOR: exec_cmd: vm get_status R3 
+Jan 25 14:12:30.007 HYPERVISOR: exec_cmd: vm extract_config R3 

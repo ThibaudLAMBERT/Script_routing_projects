@@ -1,0 +1,50 @@
+Jan 24 17:28:04.683 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 24 17:28:04.683 HYPERVISOR: Started on IP = localhost, TCP port = 54179.
+Jan 24 17:28:04.690 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 24 17:28:04.690 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips 
+Jan 24 17:28:04.690 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips
+Jan 24 17:28:04.691 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\1cb9152d-dae5-48c7-8829-298b7fc69343 
+Jan 24 17:28:04.691 GENERAL: working_dir=C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\1cb9152d-dae5-48c7-8829-298b7fc69343
+Jan 24 17:28:04.691 HYPERVISOR: exec_cmd: vm create R12 12 c7200 
+Jan 24 17:28:04.692 VM: VM R12 created.
+Jan 24 17:28:04.692 HYPERVISOR: exec_cmd: vm set_con_tcp_port R12 5011 
+Jan 24 17:28:04.692 HYPERVISOR: exec_cmd: c7200 get_mac_addr R12 
+Jan 24 17:28:04.692 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:28:04.692 HYPERVISOR: exec_cmd: vm slot_add_binding R12 0 0 C7200-IO-FE 
+Jan 24 17:28:04.692 HYPERVISOR: exec_cmd: vm set_disk0 R12 0 
+Jan 24 17:28:04.693 HYPERVISOR: exec_cmd: vm set_exec_area R12 64 
+Jan 24 17:28:04.693 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:28:04.693 HYPERVISOR: exec_cmd: vm set_idle_pc R12 0x62cc83a0 
+Jan 24 17:28:04.694 HYPERVISOR: exec_cmd: vm set_ios R12 C:/Users/ajkfh/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Jan 24 17:28:04.694 HYPERVISOR: exec_cmd: c7200 set_mac_addr R12 ca0c.95c0.0000 
+Jan 24 17:28:04.694 HYPERVISOR: exec_cmd: vm set_nvram R12 512 
+Jan 24 17:28:04.694 HYPERVISOR: exec_cmd: vm set_ram R12 512 
+Jan 24 17:28:04.695 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:28:04.695 HYPERVISOR: exec_cmd: vm slot_add_binding R12 1 0 PA-GE 
+Jan 24 17:28:04.695 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:28:04.695 HYPERVISOR: exec_cmd: vm slot_add_binding R12 2 0 PA-GE 
+Jan 24 17:28:04.695 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:28:04.695 HYPERVISOR: exec_cmd: vm slot_add_binding R12 3 0 PA-GE 
+Jan 24 17:28:09.311 HYPERVISOR: exec_cmd: nio create_udp udp-ef1331ed-e470-4dc0-a51e-4b4ad2281ea7 2065 127.0.0.1 2066 
+Jan 24 17:28:09.566 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 1 0 udp-ef1331ed-e470-4dc0-a51e-4b4ad2281ea7 
+Jan 24 17:28:09.566 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:28:09.619 HYPERVISOR: exec_cmd: nio create_udp udp-695cdd5d-97e3-4122-a5fd-6c77bf3159a4 2069 127.0.0.1 2070 
+Jan 24 17:28:09.630 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 3 0 udp-695cdd5d-97e3-4122-a5fd-6c77bf3159a4 
+Jan 24 17:28:09.630 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:28:09.937 HYPERVISOR: exec_cmd: nio create_udp udp-bd99ea60-11d7-42cd-b405-70a97c08e95b 2077 127.0.0.1 2078 
+Jan 24 17:28:09.939 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R12 2 0 udp-bd99ea60-11d7-42cd-b405-70a97c08e95b 
+Jan 24 17:28:09.939 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:33:26.057 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:33:26.057 HYPERVISOR: exec_cmd: vm extract_config R12 
+Jan 24 17:36:39.318 HYPERVISOR: exec_cmd: vm set_ghost_status R12 2 
+Jan 24 17:36:39.318 HYPERVISOR: exec_cmd: vm set_ghost_file R12 C:\Users\ajkfh\INSA\3TC\Script_routing_projects\GNS3_ville\project-files\dynamips\c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Jan 24 17:36:39.319 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:36:39.335 HYPERVISOR: exec_cmd: vm set_config R12 configs\i12_startup-config.cfg 
+Jan 24 17:36:39.335 HYPERVISOR: exec_cmd: vm start R12 
+Jan 24 17:37:09.623 HYPERVISOR: exec_cmd: vm extract_config R12 
+Jan 24 17:38:06.883 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 24 17:38:06.884 HYPERVISOR: exec_cmd: vm stop R12 
+Jan 24 17:38:06.993 VM: VM R12 shutdown.
+Jan 24 17:38:06.994 HYPERVISOR: exec_cmd: vm extract_config R12 
+Jan 25 14:12:30.032 HYPERVISOR: exec_cmd: vm get_status R12 
+Jan 25 14:12:30.034 HYPERVISOR: exec_cmd: vm extract_config R12 
