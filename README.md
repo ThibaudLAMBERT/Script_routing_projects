@@ -25,7 +25,7 @@ Ce dossier contient les différentes topologies utilisées utilisés lors du pro
 
 - Sujet : ce dossier contient la topologie du sujet
 
-- Various : topologiz plus complexe avec 4 AS. Cette topologie a été réalisé pour tester notre script sur un réseau plus complexe.
+- Various : topologie plus complexe avec 4 AS. Cette topologie a été réalisé pour tester notre script sur un réseau plus complexe.
 
 ### Topology
 
